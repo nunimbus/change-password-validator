@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.keycloak.policy;
+package org.nunimbus.policy;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -26,6 +26,8 @@ import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.PasswordPolicy;
 import org.keycloak.models.RealmModel;
 import org.keycloak.models.UserModel;
+import org.keycloak.policy.PasswordPolicyProvider;
+import org.keycloak.policy.PolicyError;
 
 /**
  * @author <a href="mailto:sthorger@redhat.com">Stian Thorgersen</a>

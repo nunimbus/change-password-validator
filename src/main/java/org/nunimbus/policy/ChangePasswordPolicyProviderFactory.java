@@ -15,11 +15,13 @@
  * limitations under the License.
  */
 
-package org.keycloak.policy;
+package org.nunimbus.policy;
 
 import org.keycloak.Config;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.KeycloakSessionFactory;
+import org.keycloak.policy.PasswordPolicyProvider;
+import org.keycloak.policy.PasswordPolicyProviderFactory;
 
 /**
  * @author <a href="mailto:sthorger@redhat.com">Stian Thorgersen</a>
@@ -27,11 +29,6 @@ import org.keycloak.models.KeycloakSessionFactory;
 public class ChangePasswordPolicyProviderFactory implements PasswordPolicyProviderFactory {
 
     public static final String ID = "password-changed-hook";
-
-    @Override
-    public String getId() {
-        return ID;
-    }
 
     @Override
     public PasswordPolicyProvider create(KeycloakSession session) {
@@ -58,16 +55,21 @@ public class ChangePasswordPolicyProviderFactory implements PasswordPolicyProvid
 
     @Override
     public String getDefaultConfigValue() {
-        return "8";
-    }
-
-    @Override
-    public boolean isMultiplSupported() {
-        return false;
+        return "1";
     }
 
     @Override
     public void close() {
+    }
+
+	@Override
+	public boolean isMultiplSupported() {
+		return false;
+	}
+
+	@Override
+    public String getId() {
+        return ID;
     }
 
 }
